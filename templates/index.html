@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "lagushki_style.css" %}">
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> глав страничка </title>
+</head>
+<body>
+    <div id="menu">
+        <div id="betalabel">Beta</div>
+        <div class="t1">
+            <a id="titlel" class="title" href="">🐸 Лагушки и жабы</a>
+            <a id="titles" class="title" href="">🐸</a>
+        </div>
+        <div class="linksl">
+            <a href="faq" class="link">ЧЗВ</a>
+            <a href="index2" class="link">Index2</a>
+            <a href="info" class="link">Инфо</a>
+            <a href="rating" class="link">Рейтинг</a>
+            <a href="build" class="link">Build</a>
+        </div>
+        <div id="menu_button">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div class="linkssmenu">
+        <a href="faq" class="llink">ЧЗВ</a>
+        <a href="index2" class="llink">Index2</a>
+        <a href="info" class="llink">Инфо</a>
+        <a href="rating" class="llink">Рейтинг</a>
+        <a href="build" class="llink">Build</a>
+    </div>
+    <div id="content">
+        <div class="iblock">
+            Лягушки и жабы любимы многими. Это одно из самых полезных и приятных созданий. Чтоб больше о них узнать можно посмотреть вкладку <a href="info.html" id="infolink">Инфо</a>.
+        </div>
+        <p></p>
+        <div class="iblock">
+            Некоторым возможно интересна классификация по субьективному мнению автора сайта. Для этого можно посмотреть вкладку <a href="rating.html" id="ratinglink">Рейтинг</a>.
+        </div>
+        <p></p>
+        <div class="iblock">
+            А для тех, кому интересно зачем автор создал этот сайт и всё ли у него в порядке, можно посмотреть вкладку <a href="faq.html" id="faqlink">ЧЗВ</a>.
+        </div>
+        <p></p>
+        <div class="iblock">
+            Кому очень хочется создать собственный рейтинг лягушек на основе картинок с сайта, который можно увидеть позже в Index2, можно посмотреть вкладку <a href="build.html" id="buildlink">Build</a>.
+        </div>
+    </div>
+    <script src="{% static "script.js" %}"></script>
+</body>
+</html>

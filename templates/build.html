@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "lagushki_style.css" %}">
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> глав страничка </title>
+</head>
+<body>
+    <div id="menu">
+        <div id="betalabel">Beta</div>
+        <div class="t1">
+            <a id="titlel" class="title" href="../">🐸 Лагушки и жабы</a>
+            <a id="titles" class="title" href="../">🐸</a>
+        </div>
+        <div class="linksl">
+            <a href="../faq" class="link">ЧЗВ</a>
+            <a href="../index2" class="link">Index2</a>
+            <a href="../info" class="link">Инфо</a>
+            <a href="../rating" class="link">Рейтинг</a>
+            <a href="" class="alink link">🐸<br>Build</a>
+        </div>
+        <div id="menu_button">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div class="linkssmenu">
+        <a href="../faq" class="llink">ЧЗВ</a>
+        <a href="../index2" class="llink">Index2</a>
+        <a href="../info" class="llink">Инфо</a>
+        <a href="../rating" class="llink">Рейтинг</a>
+        <a href="../build" class="alink llink">🐸Build</a>
+    </div>
+    <div id="content">
+        Создавайте свои рейтинги жаб и лягушек, перетягивая картинку в тот пункт, который вам более всего кажется
+        соответствующим.
+        <strong>Функция сугубо экспериментальная и может не работать на старых телефонах!</strong>
+        <table id="build">
+            <tr class="A">
+                <td class="theader">A</td>
+                <td class="tcontent" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr class="B">
+                <td class="theader">B</td>
+                <td class="tcontent" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr class="C">
+                <td class="theader">C</td>
+                <td class="tcontent" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr class="D">
+                <td class="theader">D</td>
+                <td class="tcontent" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+        </table>
+        <div id="archive" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="send_button"><button onclick="sendData()">Отправить результаты</button></div>
+    </div>
+    <script src="{% static "script.js" %}"></script>
+</body>
+</html>
