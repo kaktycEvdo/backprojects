@@ -12,8 +12,8 @@ class Link(models.Model):
 
 
 class Tier(models.Model):
-    A = models.CharField(max_length=200)
-    B = models.CharField(max_length=200)
-    C = models.CharField(max_length=200)
-    D = models.CharField(max_length=200)
-    archive = models.CharField(max_length=200)
+    A = models.CharField(max_length=500, null=True, blank=True)
+    B = models.CharField(max_length=500, null=True, blank=True)
+    C = models.CharField(max_length=500, null=True, blank=True)
+    D = models.CharField(max_length=500, null=True, blank=True)
+    archive = models.CharField(max_length=500, null=True, blank=True)

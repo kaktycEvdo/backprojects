@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "../../assets/static/lagushki_style.module.css";
 import FrogImage from "../../components/lagushki/FrogImage.jsx";
+import {DragDropContext} from "react-beautiful-dnd"
 
 
 class Rating extends React.Component{
@@ -12,10 +13,11 @@ class Rating extends React.Component{
     render() {
         return(
             <>
+                Это сугубо мнение Ильи.
                 <table>
-                    <tr className={"A"}>
-                        <td className="theader">A</td>
-                        <td className="tcontent">
+                    <tr className={classes.A}>
+                        <td className={classes.theader}>A</td>
+                        <td className={classes.tcontent}>
                             <FrogImage number={2}/>
                             <FrogImage number={3}/>
                             <FrogImage number={5}/>
@@ -39,9 +41,9 @@ class Rating extends React.Component{
                             <FrogImage number={32}/>
                         </td>
                     </tr>
-                    <tr className="B">
-                        <td className="theader">B</td>
-                        <td className="tcontent">
+                    <tr className={classes.B}>
+                        <td className={classes.theader}>B</td>
+                        <td className={classes.tcontent}>
                             <FrogImage number={1}/>
                             <FrogImage number={4}/>
                             <FrogImage number={6}/>
@@ -51,15 +53,15 @@ class Rating extends React.Component{
                             <FrogImage number={24}/>
                         </td>
                     </tr>
-                    <tr className="C">
-                        <td className="theader">C</td>
-                        <td className="tcontent">
+                    <tr className={classes.C}>
+                        <td className={classes.theader}>C</td>
+                        <td className={classes.tcontent}>
                             <FrogImage number={11}/>
                         </td>
                     </tr>
-                    <tr className="D">
-                        <td className="theader">D</td>
-                        <td className="tcontent">
+                    <tr className={classes.D}>
+                        <td className={classes.theader}>D</td>
+                        <td className={classes.tcontent}>
                             <FrogImage number={22}/>
                         </td>
                     </tr>

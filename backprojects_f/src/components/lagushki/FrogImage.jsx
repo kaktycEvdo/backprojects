@@ -52,7 +52,7 @@ class FrogImage extends React.Component{
         return(
             <>
                 <img src={this.images[this.props.number-1]} onClick={() => this.setState({opened: true})}
-                     alt={"лягушка/жаба "+this.props.number} {...this.props}/>
+                     alt={"лягушка/жаба "+this.props.number} className={classes.cell} {...this.props}/>
                 <Modal opened={this.state.opened} close={this.closeModal}>
                     <img src={this.images[this.props.number-1]} className={classes.modal__img}
                          alt={"лягушка/жаба "+this.props.number}/>
