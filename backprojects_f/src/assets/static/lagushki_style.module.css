@@ -1,0 +1,455 @@
+@font-face {
+    font-family: "General style";
+    src: local('Lack Regular'), url('Lack-Regular.woff') format('woff');
+}
+
+.lagushki__body{
+    color: #050505;
+    padding: 0;
+    font-family: "General style", sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-items: start;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    max-height: 100vh;
+    overflow: auto;
+}
+.lagushki__body .betalabel{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: red;
+    z-index: 10;
+}
+.lagushki__body .indexbackground{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    display: block;
+    background-position: center;
+    filter: brightness(10);
+    z-index: 0;
+}
+.lagushki__body .menu{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 1fr;
+    align-content: stretch;
+    justify-content: stretch;
+    margin-bottom: 10px;
+    z-index: 1001;
+    right: 0;
+    top: 0;
+}
+.lagushki__body .content{
+    position: relative;
+    height: 88.9%;
+    width: 100%;
+    margin: 90px 0 20px 0;
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 555;
+}
+.lagushki__body .block{
+    align-self: center;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: middle;
+    width: fit-content;
+}
+.lagushki__body .block:nth-child(2){
+    margin: 20px 0;
+}
+.lagushki__body .iblock{
+    justify-self: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: x-large;
+}
+.lagushki__body .iblock:first-child ~ .iblock{
+    padding-top: 20px;
+}
+.lagushki__body .answer{
+    font-size: 18px;
+    word-wrap: normal;
+}
+.lagushki__body strong{
+    color: red;
+    text-decoration: underline red 2px;
+    margin-bottom: 5px;
+}
+.lagushki__body table{
+    background-color: black;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.lagushki__body .theader{
+    height: fit-content;
+    text-align: center;
+    width: 25px;
+    border-radius: 0;
+}
+.lagushki__body .tcontent{
+    border-radius: 0;
+}
+.lagushki__body .A > .theader{
+    border-radius: 10px 0 0 0;
+}
+.lagushki__body .D > .theader{
+    border-radius: 0 0 0 10px;
+}
+.lagushki__body .A > .tcontent{
+    border-radius: 0 10px 0 0;
+}
+.lagushki__body .D > .tcontent{
+    border-radius: 0 0 10px 0;
+}
+.lagushki__body td{
+    vertical-align: center;
+}
+.lagushki__body .A{
+    background-color: wheat;
+}
+.lagushki__body .B{
+    background-color: lightgreen;
+}
+.lagushki__body .C{
+    background-color: #ffff88;
+}
+.lagushki__body .D{
+    background-color: lightpink;
+}
+.lagushki__body .l{
+    text-align: left;
+}
+.lagushki__body .r{
+    text-align: right;
+}
+.lagushki__body .archive > img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: solid black 2px;
+    object-fit: cover;
+}
+.lagushki__body td > img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: solid black 2px;
+    object-fit: cover;
+    vertical-align: middle;
+    margin: 2px 1px 2px 1px;
+}
+.lagushki__body .modal__img{
+    width: calc(300px + 9vw);
+    height: calc(400px + 10vh);
+    object-fit: contain;
+    overflow: hidden;
+}
+.lagushki__body .qcontent{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+.lagushki__body .questions{
+    position: relative;
+    font-size: x-large;
+    color: black;
+    margin-bottom: 20px;
+}
+.lagushki__body h1{
+    position: absolute;
+    font-size: x-large;
+}
+.lagushki__body .t1{
+    display: table;
+    height: 100%;
+    justify-self: center;
+}
+.lagushki__body .title{
+    font-family: "General style", sans-serif;
+    width: 50px;
+    text-align: center;
+    background: -webkit-linear-gradient(47deg, rgba(9,9,121,1), rgba(42,208,61,1));
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -moz-background-clip: content-box;
+    -webkit-text-fill-color: transparent;
+    color: white;
+    position: relative;
+    justify-self: center;
+    display: table-cell;
+    margin: 0;
+    vertical-align: middle;
+}
+.lagushki__body .linksl{
+    display: table;
+    table-layout: auto;
+    align-content: stretch;
+}
+.lagushki__body .menu_button{
+    overflow: auto;
+    word-wrap: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 100%;
+}
+.lagushki__body .link{
+    justify-self: stretch;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+}
+.lagushki__body .link > div, .lagushki__body .llink > div{
+    display: none;
+}
+.lagushki__body .link.active{
+    padding-bottom: 20px;
+}
+.lagushki__body .link.active > div, .lagushki__body .llink.active > div{
+    display: block;
+}
+.lagushki__body .llink{
+    justify-self: center;
+    text-align: center;
+    vertical-align: middle;
+    height: fit-content;
+    width: 130px;
+    margin: 30px 10px 30px 10px;
+}
+.lagushki__body .linksl > .alink {
+    padding: 0 0 25px 0;
+}
+.lagushki__body :-webkit-any-link{
+    text-decoration: none;
+    color: white;
+}
+.lagushki__body .link{
+    color: white;
+    text-decoration: none;
+}
+.lagushki__body .answer{
+    word-wrap: break-word;
+}
+.lagushki__body .question{
+    word-wrap: break-word;
+}
+.lagushki__body .alink{
+    color: white;
+}
+.lagushki__body .infolink{
+    color: black;
+    text-decoration: underline blue 2px;
+    cursor: pointer;
+}
+.lagushki__body .ratinglink{
+    color: black;
+    text-decoration: underline red 2px;
+    cursor: pointer;
+}
+.lagushki__body .faqlink{
+    color: black;
+    text-decoration: underline purple 2px;
+    cursor: pointer;
+}
+.lagushki__body .buildlink{
+    color: black;
+    text-decoration: underline limegreen 2px;
+    cursor: pointer;
+}
+.lagushki__body .infoimg{
+    max-width: 95%;
+    height: auto;
+    align-self: stretch;
+    text-align: center;
+}
+.lagushki__body .archive{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+.lagushki__body .archive > p{
+    margin: 2px;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: solid black 2px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+.lagushki__body td > p{
+    margin: 2px;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    border: solid black 2px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+.lagushki__body table td.tcontent{
+    padding: 0;
+    vertical-align: middle;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    justify-self: center;
+    min-height: 170px;
+}
+.lagushki__body table.build > tr{
+    height:fit-content;
+    width: 100%;
+}
+.lagushki__body table.build{
+    width: 100%;
+}
+.lagushki__body .titlel{
+    width: 600px;
+    font-weight: 900;
+}
+.lagushki__body .titles{
+    font-weight: 900;
+    font-size: 30px;
+}
+.lagushki__body .linkssmenu{
+    position: fixed;
+    display: flex;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    flex-flow: wrap column;
+    color: white;
+    z-index: 666;
+    min-height: 91.5%;
+    top: 80px;
+    background-color: black;
+    align-content: center;
+    transition: right 0.2s ease-in;
+}
+.lagushki__body .visible{
+    right: 0;
+}
+.lagushki__body .linkssmenu__cover{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 600;
+    background-color: rgba(0,0,0,0);
+    backdrop-filter: none;
+    transition: 0.2s ease-in;
+}
+.lagushki__body .linkssmenu__cover.visible{
+    background-color: rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    display: block;
+}
+.lagushki__body .bar1, .lagushki__body .bar2, .lagushki__body .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.lagushki__body .change.bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 5px);
+    transform: rotate(-45deg) translate(-9px, 5px);
+}
+/* Fade out the second bar */
+.lagushki__body .change.bar2 {
+    opacity: 0;
+}
+/* Rotate last bar */
+.lagushki__body .change.bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -4px);
+    transform: rotate(45deg) translate(-8px, -4px);
+}
+
+.lagushki__body .send_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.lagushki__body .send_button input{
+    padding: 10px;
+    background-color: mediumseagreen;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: "General style";
+    font-weight: 600;
+}
+.lagushki__body .send_button input:hover{
+    cursor: pointer;
+}
+
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+    .lagushki__body .title{
+        background: -webkit-linear-gradient(47deg, rgba(9,9,121,1), rgba(42,208,61,1));
+        background-clip: unset;
+        -webkit-background-clip: text;
+        -moz-background-clip: content-box;
+        -webkit-text-fill-color: transparent;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .lagushki__body .title{
+        color: white;
+    }
+}
+@media screen and (max-width: 680px){
+    .lagushki__body .titlel{
+        display: none;
+        width: 0;
+    }
+    .lagushki__body .links > .link{
+        font-size: small;
+    }
+    .lagushki__body .linksl{
+        display: none;
+    }
+    .lagushki__body .menu{
+        justify-content: space-between;
+    }
+}
+@media screen and (min-width: 681px){
+    .lagushki__body .titles{
+        display: none;
+        width: 0;
+    }
+    .lagushki__body .menu_button{
+        display: none;
+    }
+    .lagushki__body .menu{
+        justify-content: stretch;
+    }
+    .lagushki__body .linkssmenu{
+        display:none;
+    }
+}
+@media screen and (max-height: 680px) {
+    .lagushki__body .menu{
+        height: 20%
+    }
+}

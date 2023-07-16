@@ -1,0 +1,58 @@
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    z-index: 15;
+    animation: ease-out appearBottomContainer 0.1s;
+}
+.content{
+    height: fit-content;
+    width: fit-content;
+    max-height: 80vh;
+    max-width: 80vw;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.2);
+    animation: ease-out appearBottom 0.2s;
+}
+.close_button__container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 5px;
+}
+.close_button{
+    font-size: xx-large;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes appearBottomContainer {
+    0%{
+        background-color: rgba(0,0,0,0);
+        backdrop-filter: blur(0);
+    }
+    100%{
+        background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(10px);
+    }
+}
+@keyframes appearBottom {
+    0%{
+        margin-top: 10vh;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }
+}

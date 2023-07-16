@@ -2,8 +2,8 @@
 <html>
 <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static "lagushki_style.css" %}">
-    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "../backprojects_f/src/assets/static/lagushki_style.css" %}">
+    <link rel="icon" href="{% static "../backprojects_f/src/assets/static/img/favlinks.ico" %}" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -60,8 +60,10 @@
             </tr>
         </table>
         <div id="archive" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="send_button"><button onclick="sendData()">Отправить результаты</button></div>
+        <form name="data" onsubmit="return sendData(event)">
+            <div class="send_button"><input type="submit" value="Отправить результаты"/></div>
+        </form>
     </div>
-    <script src="{% static "script.js" %}"></script>
+    <script src="{% static "../backprojects_f/src/assets/static/script.js" %}"></script>
 </body>
 </html>

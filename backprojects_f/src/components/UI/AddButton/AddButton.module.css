@@ -1,0 +1,21 @@
+.add_button__container{
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    color: inherit;
+    user-select: none;
+}
+.add_button{
+    background-color: #7777FF;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 5px groove rgba(0,0,0,0.2);
+    user-select: none;
+}
+.add_button__icon{
+    font-size: 2em;
+}
