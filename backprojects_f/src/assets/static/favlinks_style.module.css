@@ -197,6 +197,9 @@
 .favlinks__body .profile__page{
 
 }
+.favlinks__body .modal__override{
+    /*background: white;*/
+}
 
 @media screen and (max-width: 768px) {
     .favlinks__body .favlinks{

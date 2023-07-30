@@ -87,12 +87,8 @@ WSGI_APPLICATION = 'backprojects.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'PORT': 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlldb',
     }
 }
 
@@ -131,14 +127,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = './templates/../lagushki/static/'
-STATIC_URL = 'static/'
-MEDIA_ROOT = './templates/../lagushki/media/'
-MEDIA_URL = 'media/'
+STATIC_ROOT = 'backprojects_f/src/assets/static'
+STATIC_URL = '/static/'
+MEDIA_ROOT = 'backprojects_f/src/assets/media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'server.User'

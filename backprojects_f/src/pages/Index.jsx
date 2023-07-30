@@ -15,6 +15,7 @@ class Index extends React.Component{
                     <nav className={classes.index_nav}>
                         <Link to="favlinks">Менеджер закладок FavLinks</Link>
                         <Link to="lagushki">Практика Lagushki</Link>
+                        <Link to="indexdrive">Интернет-магазин IndexDrive</Link>
                     </nav>
                 </div>
             </div>

@@ -35,7 +35,7 @@ class AddModal extends React.Component{
 
     render() {
         return(
-            <Modal class={"modal__add"} opened={this.props.opened} close={this.props.close}>
+            <Modal className={classes.modal__override} opened={this.props.opened} close={this.props.close}>
                 <form className={classes.add__form} onSubmit={(e) => {
                     e.preventDefault();
                     this.add();

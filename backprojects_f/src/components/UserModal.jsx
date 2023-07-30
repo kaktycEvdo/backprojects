@@ -14,8 +14,6 @@ class UserModal extends React.Component{
         }
     }
 
-    //TODO: для мобилок сделать кнопки влево и вправо в навигационной панели для перемещения между окнами.
-
     close(){
         this.props.setOpened(false)
     }
@@ -43,7 +41,7 @@ class UserModal extends React.Component{
 
     render() {
         return(
-            <Modal opened={this.props.opened} close={() => this.close()}>
+            <Modal opened={this.props.opened} close={() => this.close()} className={classes.modal__override}>
                 <nav className={classes.modal__nav}>
                     <button onClick={() => this.page_down()}><FontAwesomeIcon icon={faAngleLeft}/></button>
                         {this.state.page_name}

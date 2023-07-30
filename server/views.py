@@ -1,27 +1,41 @@
-from django.contrib.auth.models import User
-from rest_framework.views import View, APIView
-from .models import Link, Tier
-from .serializer import LinkSerializer, UserSerializer, TierSerializer
+from rest_framework.views import APIView
+from .models import User, Link, Tier, Order
+from .serializer import LinkSerializer, UserSerializer, TierSerializer, OrderSerializer
 from rest_framework.response import Response
+from rest_framework import permissions
 import re
 
 
 class UsersView(APIView):
     def get(self, request):
+        permission_classes = [permissions.IsAdminUser]
         if request.query_params:
-            data = User.objects.get(username=request.query_params["username"],
-                                    password=request.query_params["password"])
-            output = {
-                "username": data.username,
-                "email": data.email,
-                "id": data.id
+            output = User.objects.get(username=request.query_params["username"],
+                                      password=request.query_params["password"])
+            data = {
+                "username": output.username,
+                "email": output.email,
+                "first_name": output.first_name,
+                "last_name": output.last_name,
+                "patronymic": output.patronymic,
+                "passport": output.passport,
+                "birth_date": output.birth_date,
+                "phone": output.phone,
+                "id": output.id
             }
-            return Response(output)
+
+            return Response(data)
         else:
             output = [
                 {
                     "username": output.username,
                     "email": output.email,
+                    "first_name": output.first_name,
+                    "last_name": output.last_name,
+                    "patronymic": output.patronymic,
+                    "passport": output.passport,
+                    "birth_date": output.birth_date,
+                    "phone": output.phone,
                     "id": output.id
                 } for output in User.objects.all()
             ]
@@ -40,7 +54,12 @@ class UserView(APIView):
         output = {
             "username": data.username,
             "email": data.email,
-            "id": data.id
+            "first_name": data.first_name,
+            "last_name": data.last_name,
+            "patronymic": data.patronymic,
+            "passport": data.passport,
+            "birth_date": data.birth_date,
+            "phone": data.phone
         }
         return Response(output)
 
@@ -140,3 +159,51 @@ class TiersView(APIView):
             serializer.save()
             return Response(serializer.data)
 
+
+class OrdersView(APIView):
+    def get(self, request, user_id):
+        output = [
+            {
+                "car_id": output.car_id,
+                "car_mark": output.car_mark,
+                "car_name": output.car_name,
+                "car_tag": output.car_tag,
+                "days_begin": output.days_begin,
+                "days_end": output.days_end,
+                "fel_name": output.fel_name,
+                "price": output.price
+            } for output in Order.objects.filter(user=user_id)
+        ]
+        return Response(output)
+
+    def post(self, request, user_id):
+        if user_id:
+            request.data["user"] = user_id
+            serializer = OrderSerializer(data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                return Response(serializer.data)
+
+
+class OrderView(APIView):
+    def get(self, request, user_id, order_id):
+        output = [
+            {
+                "car_id": output.car_id,
+                "car_mark": output.car_mark,
+                "car_name": output.car_name,
+                "car_tag": output.car_tag,
+                "price": output.price,
+                "days_begin": output.days_begin,
+                "days_end": output.days_end,
+                "fel_name": output.fel_name
+            } for output in Order.objects.filter(user=user_id, pk=order_id)
+        ]
+        return Response(output)
+
+    def delete(self, request, user_id, order_id):
+        order = Order.objects.get(pk=order_id, user=user_id)
+        if order:
+            order.delete()
+            return Response("ok")
+        return Response("order not found")
