@@ -52,7 +52,7 @@ export default function Profile(){
                         <h2>Бронирования:</h2>
                         <div className={classes.acbk_list}>
                             <div className={classes.acbk_list__container}>
-                                {orders ?
+                                {orders.values ?
                                     Object.values(orders).map((order, index) => (
                                         <div key={index} className={classes.acbksc}>
                                             <h3>Заказ {index+1}</h3>

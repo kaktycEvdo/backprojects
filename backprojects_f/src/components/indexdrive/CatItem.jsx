@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React from "react";
 import classes from "../../assets/static/indexdrive_style.module.css";
 import Modal from "../UI/Modal/Modal.jsx";
 import classNames from "classnames";
@@ -8,9 +8,6 @@ import {Form} from "react-router-dom";
 class CatItem extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            opened: false
-        }
     }
 
     render() {
@@ -22,10 +19,10 @@ class CatItem extends React.Component{
                     <div className={classes.cat__price}>
                         от <i className={classes.accent_text}>{this.props.output.price}₽</i>
                     </div>
-                    <a className={classes.generic_button} onClick={() => this.setState({opened: true})}>Подробнее</a>
+                    <a className={classes.generic_button} onClick={this.props.open}>Подробнее</a>
                 </div>
                 <Modal className={classNames(classes.page__container, classes.car_page)}
-                       opened={this.state.opened} close={() => this.setState({opened: false})}>
+                       opened={this.props.opened} close={this.props.close}>
                     <div className={classes.car_page__container}>
                         <div className={classes.car_page__image}><img src={this.props.output.image} alt={"машинка"}/></div>
                         <div className={classes.car_page_chars}>

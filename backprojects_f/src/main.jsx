@@ -83,7 +83,13 @@ const router = createBrowserRouter([
                 path: "car-select",
                 element: <Catalog/>,
                 loader: async () => {return [await carsLoader(), await basketLoader()]},
-                action: basketAction
+                action: basketAction,
+                children:[
+                    {
+                        path: ":carID",
+                        element: <Catalog/>
+                    }
+                ]
             },
             {
                 path: "branches",

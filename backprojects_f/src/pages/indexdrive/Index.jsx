@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../../assets/static/indexdrive_style.module.css";
 import New from "../../components/indexdrive/New.jsx";
 import img1 from "../../assets/static/img/ew-car-png-cb-car-png-car-11563267985ea0mqfwilw.png";
@@ -7,6 +7,7 @@ import img3 from "../../assets/static/img/images (1).jfif";
 import img4 from "../../assets/static/img/Vintage_blue_car.png";
 import img5 from "../../assets/static/img/plan-road-trip-tips-ideas.jpg";
 import {useLoaderData} from "react-router-dom";
+import Search from "../../components/indexdrive/Search";
 
 
 export default function Index(){
@@ -44,8 +45,9 @@ export default function Index(){
         }
     ]
     const cars = useLoaderData();
-    const car1 = cars[Math.round(Math.random()*12)];
-    const car2 = cars[Math.round(Math.random()*12)];
+    const car1 = sessionStorage.getItem("car1") ? sessionStorage.getItem("car1") : sessionStorage.setItem("car1", cars[Math.round(Math.random()*12)].image)
+    const car2 = sessionStorage.getItem("car2") ? sessionStorage.getItem("car2") : sessionStorage.setItem("car2", cars[Math.round(Math.random()*12)].image)
+    let [value, setValue] = useState("");
 
     return(
         <>
@@ -58,19 +60,20 @@ export default function Index(){
                 </div>
             </div>
             <div className={classes.search}>
-                <img src={car1.image} alt={"картинка"}/>
+                <img src={car1} alt={"картинка"}/>
                 <div className={classes.search_text}>
                     <div>
                         Вот эти машины нам доверяют.<br/>
                         А вы нам нет?<br/>
                         Попробуйте поиск и убедитесь в их качестве.
                     </div>
+                    <Search cars={cars} modal={true} value={value} setValue={setValue}/>
                 </div>
-                <img src={car2.image} alt={"картинка"}/>
+                <img src={car2} alt={"картинка"}/>
             </div>
             <h2>Новости</h2>
             <div className={classes.news}>
-                {news.map((output, index) => (
+                {news.map((output) => (
                     <New name={output.name} description={output.description}
                          img={output.img} key={output.name}/>
                 ))}

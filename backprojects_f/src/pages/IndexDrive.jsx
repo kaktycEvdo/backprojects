@@ -206,7 +206,7 @@ export async function getBasket(){
 export async function getOrders(){
     let user_data = await getActiveUser();
     let orders = {};
-    await axios.get("http://localhost:8000/indexdrive/"+user_data.id+"/orders")
+    if(user_data.id) await axios.get("http://localhost:8000/indexdrive/"+user_data.id+"/orders")
         .then((res) => {
             res.data.map((output, index) => {
                 orders["order"+index] = output;
@@ -267,7 +267,7 @@ export async function addOrder(){
         fel_name: fel_names
     }
 
-    await axios.post("http://localhost:8000/indexdrive/"+user_id+"/orders", order)
+    if(user_id) await axios.post("http://localhost:8000/indexdrive/"+user_id+"/orders", order)
         .catch(reason => alert("ошибка: "+reason));
 }
 
@@ -408,7 +408,8 @@ export async function actionUser({request}){
             break;
         }
         case "3":{
-            sessionStorage.setItem("active-user", null); break;
+            sessionStorage.setItem("user", null);
+            break;
         }
         default: {
             return alert("что")

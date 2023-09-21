@@ -56,7 +56,7 @@ export default function History(){
                                     }
                                     <div className={classes.acbkit}>
                                         <div className={classNames(classes.acbktxt, classes.accent_text)}>Итоговая цена</div>
-                                        <div className={classNames(classes.acbktxt, classes.accent_text)}>{order.price}</div>
+                                        <div className={classNames(classes.acbktxt, classes.accent_text)}>{order.price}₽</div>
                                     </div>
                                 </div>
                             ))
