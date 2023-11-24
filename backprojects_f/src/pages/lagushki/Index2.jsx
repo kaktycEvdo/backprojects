@@ -12,7 +12,7 @@ class Index2 extends React.Component{
             tables: null
         }
 
-        axios.get("http://localhost:8000/lagushki/tiers").then((res) => {
+        axios.get("https://backproj.onrender.com/lagushki/tiers").then((res) => {
             this.setState({
                 tables: res.data.map((output, index) =>(
                     <>

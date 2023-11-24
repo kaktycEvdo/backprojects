@@ -30,7 +30,7 @@ class EditModal extends React.Component{
             // не придумал как на уровне бек-энда это сделать
             object.name = object.link.split(".")[0];
         }
-        axios.put("http://localhost:8000/favlinks/"+this.props.active_user_id+"/links/"+link_id, object).then(
+        axios.put("https://backproj.onrender.com/favlinks/"+this.props.active_user_id+"/links/"+link_id, object).then(
             () => this.props.update()
         )
             .catch(reason => alert(reason));

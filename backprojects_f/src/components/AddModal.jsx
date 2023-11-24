@@ -29,7 +29,7 @@ class AddModal extends React.Component{
             // не придумал как на уровне бек-энда это сделать
             object.name = object.link.split(".")[0];
         }
-        axios.post("http://localhost:8000/favlinks/"+this.props.active_user_id+"/links", object).then(this.props.update)
+        axios.post("https://backproj.onrender.com/favlinks/"+this.props.active_user_id+"/links", object).then(this.props.update)
             .catch(reason => alert(reason));
     }
 

@@ -206,7 +206,7 @@ export async function getBasket(){
 export async function getOrders(){
     let user_data = await getActiveUser();
     let orders = {};
-    if(user_data.id) await axios.get("http://localhost:8000/indexdrive/"+user_data.id+"/orders")
+    if(user_data.id) await axios.get("https://backproj.onrender.com/indexdrive/"+user_data.id+"/orders")
         .then((res) => {
             res.data.map((output, index) => {
                 orders["order"+index] = output;
@@ -267,7 +267,7 @@ export async function addOrder(){
         fel_name: fel_names
     }
 
-    if(user_id) await axios.post("http://localhost:8000/indexdrive/"+user_id+"/orders", order)
+    if(user_id) await axios.post("https://backproj.onrender.com/indexdrive/"+user_id+"/orders", order)
         .catch(reason => alert("ошибка: "+reason));
 }
 
@@ -351,7 +351,7 @@ export async function getActiveUser(){
 }
 
 export async function setActiveUser(data){
-    await axios.get("http://localhost:8000/users/"+data.id)
+    await axios.get("https://backproj.onrender.com/users/"+data.id)
         .then(res => {
             const user = {
                 id: data.id,
@@ -375,7 +375,7 @@ export async function actionUser({request}){
     const username = randomUsername();
     switch (option){
         case "1":{
-            await axios.post("http://localhost:8000/users", {
+            await axios.post("https://backproj.onrender.com/users", {
                 first_name: data.get("first_name"),
                 last_name: data.get("last_name"),
                 patronymic: data.get("patronymic"),
@@ -385,7 +385,7 @@ export async function actionUser({request}){
                 password: data.get("password"),
                 username: username
             }).then(() => {
-                axios.get("http://localhost:8000/users", {params: {
+                axios.get("https://backproj.onrender.com/users", {params: {
                         username: username,
                         password: data.get("password")
                     }})
@@ -397,7 +397,7 @@ export async function actionUser({request}){
             break;
         }
         case "2":{
-            await axios.get("http://localhost:8000/users", {params: {
+            await axios.get("https://backproj.onrender.com/users", {params: {
                 username: data.get("username"),
                 password: data.get("password")
             }})

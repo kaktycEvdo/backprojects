@@ -21,8 +21,8 @@ class UserModalPages extends React.Component{
             password: this.state.r_password
         }
         // для точности я после отправки данных для создания юзера запрашиваю данные того юзера, что создал
-        axios.post("http://localhost:8000/users", object).then(() => {
-            axios.get("http://localhost:8000/users", { params:
+        axios.post("https://backproj.onrender.com/users", object).then(() => {
+            axios.get("https://backproj.onrender.com/users", { params:
                 {
                     username: object.username,
                     password: object.password
@@ -38,7 +38,7 @@ class UserModalPages extends React.Component{
             username: this.state.a_username,
             password: this.state.a_password
         };
-        axios.get("http://localhost:8000/users", { params:
+        axios.get("https://backproj.onrender.com/users", { params:
             {
                 username: object.username,
                 password: object.password

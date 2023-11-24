@@ -23,7 +23,7 @@ class Favlinks extends React.Component{
             })
         }
         else{
-            axios.get('http://localhost:8000/favlinks/'+this.state.active_user_id+'/links').then((res) =>
+            axios.get('https://backproj.onrender.com/favlinks/'+this.state.active_user_id+'/links').then((res) =>
             {
                 data = res.data;
                 this.setState({
@@ -47,7 +47,7 @@ class Favlinks extends React.Component{
 
     update_activeUser = (data) => {
         this.setState({active_user_id: data});
-        axios.get("http://localhost:8000/users/"+data).then((res) => {
+        axios.get("https://backproj.onrender.com/users/"+data).then((res) => {
             this.setState({active_user: {
                 username: res.data.username
                 }}, () => {
@@ -62,7 +62,7 @@ class Favlinks extends React.Component{
     }
 
     delete_link(link_id){
-        axios.delete("http://localhost:8000/favlinks/"+this.state.active_user_id+"/links/"+link_id).then(() => this.update())
+        axios.delete("https://backproj.onrender.com/favlinks/"+this.state.active_user_id+"/links/"+link_id).then(() => this.update())
             .catch(reason => alert(reason));
     }
 
